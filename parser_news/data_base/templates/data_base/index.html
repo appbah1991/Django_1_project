@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Главная страница{% endblock%}
+
+
+        {% block header %}
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="text-center my-5">
+                            <h1 class="display-5 fw-bolder text-white mb-2">Главная страница</h1>
+                            <p class="lead text-white-50 mb-4">Введите ваш запрос в форму ниже</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endblock%}
+        {% block content %}
+        <!-- Contact section-->
+        <section class="bg-light py-5">
+            <div class="container px-5 my-5 px-5">
+                <div class="text-center mb-5">
+
+                    <h2 class="fw-bolder">Введите ваш запрос и дождитесь его обработки</h2>
+                </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-6">
+
+                        <form id="contactForm1" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <!-- Submit Button-->
+                            <div class="d-grid"><button class="btn btn-primary btn-lg enabled" id="submitButton" type="submit">Парсить!</button></div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock%}
